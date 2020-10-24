@@ -1,6 +1,6 @@
 # filelog
 
-Provides general.LoggerFactory, general.Logger backed by file system
+Provides general.LoggerFactory and general.Logger backed by file system
 
 [![GoDoc](http://img.shields.io/badge/go-documentation-blue.svg)](http://godoc.org/github.com/blbgo/filelog)
 [![Go Report Card](https://goreportcard.com/badge/github.com/blbgo/filelog)](https://goreportcard.com/report/github.com/blbgo/filelog)

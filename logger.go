@@ -32,15 +32,21 @@ func new(config Config, name string) (general.Logger, error) {
 }
 
 func (r *fileLog) Log(v ...interface{}) error {
-	r.WriteString(fmt.Sprint(v...))
-	r.WriteString("\n")
-	return nil
+	_, err := r.WriteString(fmt.Sprint(v...))
+	if err != nil {
+		return err
+	}
+	_, err = r.WriteString("\n")
+	return err
 }
 
 func (r *fileLog) Logf(format string, v ...interface{}) error {
-	r.WriteString(fmt.Sprintf(format, v...))
-	r.WriteString("\n")
-	return nil
+	_, err := r.WriteString(fmt.Sprintf(format, v...))
+	if err != nil {
+		return err
+	}
+	_, err = r.WriteString("\n")
+	return err
 }
 
 func (r *fileLog) Close() error {
